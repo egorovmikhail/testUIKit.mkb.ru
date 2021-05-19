@@ -19,17 +19,40 @@ class ExchangeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        
-        configureDateLabel()
+        exchangeTableView.separatorStyle = .none
         configureTableView()
+        configureDateLabel()
         exchangeTableView.rowHeight = 48
         configureDotLoad()
+        configurateRefreshControl()
         
         NetworkService().postRequest() { [weak self] exchangeRates, isError in
             self?.dotLoad.removeFromSuperview()
             if !isError {
+                self?.exchangeTableView.separatorStyle = .singleLine
                 self?.exchangeRates = exchangeRates
                 self?.dateLabel.text = exchangeRates?.ratesDate
+                self?.exchangeTableView.reloadData()
+            }
+        }
+    }
+    
+    //  MARK: - configurateRefreshControl
+    private func configurateRefreshControl(){
+        exchangeTableView.refreshControl = UIRefreshControl()
+        exchangeTableView.refreshControl?.tintColor = .gray
+        exchangeTableView.refreshControl?.attributedTitle = NSAttributedString(string: "Refreshing...")
+        exchangeTableView.refreshControl?.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
+    }
+    
+    //  MARK: - View action
+    @objc
+    private func refreshTableView(){
+        NetworkService().postRequest() { [weak self] exchangeRates, isError in
+            if !isError {
+                self?.exchangeRates = exchangeRates
+                self?.dateLabel.text = exchangeRates?.ratesDate
+                self?.exchangeTableView.refreshControl?.endRefreshing()
                 self?.exchangeTableView.reloadData()
             }
         }

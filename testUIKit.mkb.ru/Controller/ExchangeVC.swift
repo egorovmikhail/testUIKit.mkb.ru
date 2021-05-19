@@ -22,7 +22,7 @@ class ExchangeVC: UIViewController {
         exchangeTableView.separatorStyle = .none
         configureTableView()
         configureDateLabel()
-        exchangeTableView.rowHeight = 48
+        exchangeTableView.rowHeight = 80
         configureDotLoad()
         configurateRefreshControl()
         
@@ -40,7 +40,6 @@ class ExchangeVC: UIViewController {
     //  MARK: - configurateRefreshControl
     private func configurateRefreshControl(){
         exchangeTableView.refreshControl = UIRefreshControl()
-        exchangeTableView.refreshControl?.tintColor = .gray
         exchangeTableView.refreshControl?.attributedTitle = NSAttributedString(string: "Refreshing...")
         exchangeTableView.refreshControl?.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
     }

@@ -32,4 +32,18 @@ struct Rate: Codable {
     var sale: String
     var deltaBuy: String
     var deltaSale: String
+    
+    var fromTo: String {
+        let fromTo = currMnemFrom + "/" + currMnemTo
+        return fromTo
+    }
+    
+    var saleText: String {
+        let sale = "Продать: " + sale
+        return sale
+    }
+    var buyText: String {
+        let buy = "Купить: " + buy
+        return buy
+    }
 }

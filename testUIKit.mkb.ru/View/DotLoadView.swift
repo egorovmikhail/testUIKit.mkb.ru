@@ -12,7 +12,7 @@ class DotLoadView: UIView {
   
   var dotSize: CGFloat = 18
   
-  var backView: UIView {
+  private var backView: UIView {
     let view = UIView()
     view.frame = bounds
     view.layer.backgroundColor = .none
@@ -20,7 +20,7 @@ class DotLoadView: UIView {
     return view
   }
   
-  var dotView: UIView {
+  private var dotView: UIView {
     let view = UIView()
     view.frame = CGRect(x: 0, y: 0, width: dotSize, height: dotSize)
     view.layer.cornerRadius = view.frame.width / 2

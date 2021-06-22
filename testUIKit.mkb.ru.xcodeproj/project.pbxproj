@@ -17,6 +17,9 @@
 		81B647DB264FDEA200CD9EA6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B647DA264FDEA200CD9EA6 /* NetworkService.swift */; };
 		81C75DA42650F12100E87AA6 /* BuySaleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C75DA32650F12100E87AA6 /* BuySaleVC.swift */; };
 		81D57EF9265015C500A6D0E5 /* ExchangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D57EF8265015C500A6D0E5 /* ExchangeCell.swift */; };
+		81E805852682095F00A3DE00 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E805842682095F00A3DE00 /* EndPointType.swift */; };
+		81E8058726820AFA00A3DE00 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E8058626820AFA00A3DE00 /* HTTPMethod.swift */; };
+		81E8058926820FB200A3DE00 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E8058826820FB200A3DE00 /* HTTPTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		81B647DA264FDEA200CD9EA6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		81C75DA32650F12100E87AA6 /* BuySaleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuySaleVC.swift; sourceTree = "<group>"; };
 		81D57EF8265015C500A6D0E5 /* ExchangeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeCell.swift; sourceTree = "<group>"; };
+		81E805842682095F00A3DE00 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		81E8058626820AFA00A3DE00 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		81E8058826820FB200A3DE00 /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,9 +70,9 @@
 		810D8E53264EF0970050C8FF /* testUIKit.mkb.ru */ = {
 			isa = PBXGroup;
 			children = (
-				810D8E54264EF0970050C8FF /* AppDelegate.swift */,
-				810D8E56264EF0970050C8FF /* SceneDelegate.swift */,
-				81B647DE264FE45800CD9EA6 /* Servise */,
+				81E80583268208BC00A3DE00 /* Fundamental */,
+				81E8057E268207BF00A3DE00 /* Networking */,
+				81B647DE264FE45800CD9EA6 /* Servic */,
 				81B647DF264FE48800CD9EA6 /* Controller */,
 				81D57EF72650151700A6D0E5 /* View */,
 				81B647DD264FE44500CD9EA6 /* Model */,
@@ -85,12 +91,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		81B647DE264FE45800CD9EA6 /* Servise */ = {
+		81B647DE264FE45800CD9EA6 /* Servic */ = {
 			isa = PBXGroup;
 			children = (
 				81B647DA264FDEA200CD9EA6 /* NetworkService.swift */,
 			);
-			name = Servise;
+			name = Servic;
 			sourceTree = "<group>";
 		};
 		81B647DF264FE48800CD9EA6 /* Controller */ = {
@@ -109,6 +115,57 @@
 				81D57EF8265015C500A6D0E5 /* ExchangeCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		81E8057E268207BF00A3DE00 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				81E8057F268207FE00A3DE00 /* EndPoint */,
+				81E805802682081B00A3DE00 /* Manager */,
+				81E805812682082E00A3DE00 /* Service */,
+				81E805822682086600A3DE00 /* Encoding */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		81E8057F268207FE00A3DE00 /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		81E805802682081B00A3DE00 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		81E805812682082E00A3DE00 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				81E805842682095F00A3DE00 /* EndPointType.swift */,
+				81E8058626820AFA00A3DE00 /* HTTPMethod.swift */,
+				81E8058826820FB200A3DE00 /* HTTPTask.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		81E805822682086600A3DE00 /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		81E80583268208BC00A3DE00 /* Fundamental */ = {
+			isa = PBXGroup;
+			children = (
+				810D8E54264EF0970050C8FF /* AppDelegate.swift */,
+				810D8E56264EF0970050C8FF /* SceneDelegate.swift */,
+			);
+			path = Fundamental;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,11 +239,14 @@
 			files = (
 				81C75DA42650F12100E87AA6 /* BuySaleVC.swift in Sources */,
 				81D57EF9265015C500A6D0E5 /* ExchangeCell.swift in Sources */,
+				81E805852682095F00A3DE00 /* EndPointType.swift in Sources */,
 				81B647DB264FDEA200CD9EA6 /* NetworkService.swift in Sources */,
 				810D8E59264EF0970050C8FF /* ExchangeVC.swift in Sources */,
 				810D8E55264EF0970050C8FF /* AppDelegate.swift in Sources */,
 				810D8E57264EF0970050C8FF /* SceneDelegate.swift in Sources */,
+				81E8058926820FB200A3DE00 /* HTTPTask.swift in Sources */,
 				816C1669265261E800947505 /* DotLoadView.swift in Sources */,
+				81E8058726820AFA00A3DE00 /* HTTPMethod.swift in Sources */,
 				81B647D9264FDE5000CD9EA6 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
